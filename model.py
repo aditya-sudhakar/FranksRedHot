@@ -5,6 +5,8 @@ Author(s): @awenstrup, @aditya-sudhakar, @MellieZito, @arwensadler
 Function: Create and update components
 '''
 from resistor import Resistor
+from voltage import Voltage
+from ground import Ground
 import pygame as pg
 
 class CircuitModel:
@@ -15,6 +17,10 @@ class CircuitModel:
         # Adds the sideboard components to click on
         self.r = Resistor(100, 200, 150)
         self.components.add(self.r)
+        self.v = Voltage(5, 200, 450)
+        self.components.add(self.v)
+        self.g = Ground(100, 200, 550)
+        self.components.add(self.g)
 
         self.graph = dict()
 
@@ -30,6 +36,7 @@ class CircuitModel:
         #have dictionary of components
 
     def grid_snap(self, x, y):
+        """ Makes components snap to grid positions when placed """
         grid_positions_x = [150, 300, 440, 585, 730, 870, 1010, 1150]
         grid_positions_y = [120, 230, 330, 440, 550, 650, 760, 870]
         new_x = 50
@@ -50,8 +57,11 @@ class CircuitModel:
             self.components.add(Resistor(100, xpos, ypos)) #if type 'r', make a resistor
         elif comp == 'v':
             self.components.add(Voltage(5, xpos, ypos))
+        elif comp == 'g':
+            self.components.add(Ground(xpos, ypos))
         else:
             print('Not an existing component')
+
     def update(self):
         """ Update the software state """
         #update components, position of components

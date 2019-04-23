@@ -20,6 +20,10 @@ class TempComp(Component): #inherit from component
 
         if self.type == 'r':
             self.image = pg.image.load('images/resistor.png')
+        elif self.type == 'v':
+            self.image = pg.image.load('images/voltage.png')
+        elif self.type == 'g':
+            self.image = pg.image.load('images/ground.png')
         self.image = pg.transform.scale(self.image, (height,width))
 
         self.rect = self.image.get_rect(center=(x,y))
