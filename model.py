@@ -16,6 +16,8 @@ class CircuitModel:
         self.r = Resistor(100, 200, 150)
         self.components.add(self.r)
 
+        self.graph = dict()
+
         # TO DO: Make so that it picks which image to load based on which
         # component was clicked
         self.comp_type = None #component that is clicked
@@ -33,7 +35,6 @@ class CircuitModel:
         new_x = 50
         new_y = 50
         for x_pos in grid_positions_x:
-            print(x_pos)
             if x_pos <= x:
                 new_x = x_pos + 65
         for y_pos in grid_positions_y:
@@ -44,8 +45,11 @@ class CircuitModel:
     def add_comp(self, comp, x, y):
         """ Adds a component to the sprite group of a given type and position"""
         xpos, ypos = self.grid_snap(x, y)
+        self.graph[comp] = list()
         if comp == 'r':
             self.components.add(Resistor(100, xpos, ypos)) #if type 'r', make a resistor
+        elif comp == 'v':
+            self.components.add(Voltage(5, xpos, ypos))
         else:
             print('Not an existing component')
     def update(self):
