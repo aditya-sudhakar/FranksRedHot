@@ -19,7 +19,7 @@ class CircuitModel:
         self.components.add(self.r)
         self.v = Voltage(5, 200, 450)
         self.components.add(self.v)
-        self.g = Ground(100, 200, 550)
+        self.g = Ground(200, 550)
         self.components.add(self.g)
 
         self.graph = dict()
@@ -52,15 +52,22 @@ class CircuitModel:
     def add_comp(self, comp, x, y):
         """ Adds a component to the sprite group of a given type and position"""
         xpos, ypos = self.grid_snap(x, y)
-        self.graph[comp] = list()
         if comp == 'r':
-            self.components.add(Resistor(100, xpos, ypos)) #if type 'r', make a resistor
+            value = 100
+            new_component = Resistor(value, xpos, ypos)
+             #if type 'r', make a resistor
         elif comp == 'v':
-            self.components.add(Voltage(5, xpos, ypos))
+            value = 5
+            new_component = Voltage(value, xpos, ypos)
         elif comp == 'g':
-            self.components.add(Ground(xpos, ypos))
+            value = 0
+            new_component = Ground(xpos, ypos)
         else:
-            print('Not an existing component')
+            print('Not an existing component') #just for debugging
+
+        self.components.add(new_component)
+        self.graph.update({(xpos,ypos):(comp,value)}) #component info for analysis
+        print(self.graph)
 
     def update(self):
         """ Update the software state """
