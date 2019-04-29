@@ -53,7 +53,7 @@ class CircuitModel:
         """ Adds a component to the sprite group of a given type and position"""
         xpos, ypos = self.grid_snap(x, y)
         if comp == 'r':
-            value = 100
+            value = input('Please enter a resistor value: ')
             new_component = Resistor(value, xpos, ypos)
              #if type 'r', make a resistor
         elif comp == 'v':
