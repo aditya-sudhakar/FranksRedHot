@@ -1,11 +1,11 @@
 # Frank's Red Hot SPICE Software
 
 ### Demonstration Video
-[Click here](url) to watch our demonstration video!
+[Click here](https://www.youtube.com/watch?v=dQw4w9WgXcQ) to watch our demonstration video!
 
 ### About Frank's Red Hot
 Lorem ipsul dolor some other latin stuff which means nothing
-[Click here](url) to learn more about our project!
+[Click here](learn_more.md) to learn more about our project!
 
 
 ### Our Team
@@ -14,5 +14,5 @@ Lorem ipsul dolor some other latin stuff which means nothing
 - Alexander Wenstrup - [@awenstrup](https://www.github.com/awenstrup)
 - Mellie Zito - [@MellieZito](https://www.github.com/MellieZito)
 
-Click [here](url) to learn more!
+Click [here](about_us.md) to learn more!
 
