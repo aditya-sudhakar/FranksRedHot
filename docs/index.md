@@ -11,7 +11,7 @@ Lorem ipsul dolor some other latin stuff which means nothing
 ### Our Team
 - Arwen Sadler - [@arwensadler](github.com/arwensadler)
 - Aditya Sudhakar - [@aditya-sudhakar](github.com/aditya-sudhakar)
-- Alexander Wenstrup - [@awenstrup](github.com/awenstrup)
+- Alexander Wenstrup - [@awenstrup](https://www.github.com/awenstrup)
 - Mellie Zito - [@MellieZito](github.com/MellieZito)
 
 Click [here](url) to learn more!
