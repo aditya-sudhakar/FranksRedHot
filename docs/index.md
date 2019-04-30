@@ -5,6 +5,7 @@
 
 ### About Frank's Red Hot
 Lorem ipsul dolor some other latin stuff which means nothing
+[Click here](url) to learn more about our project!
 
 
 ### Our Team
@@ -12,5 +13,6 @@ Lorem ipsul dolor some other latin stuff which means nothing
 - Aditya Sudhakar - [@aditya-sudhakar](github.com/aditya-sudhakar)
 - Alexander Wenstrup - [@awenstrup](github.com/awenstrup)
 - Mellie Zito - [@MellieZito](github.com/MellieZito)
+
 Click [here](url) to learn more!
 
