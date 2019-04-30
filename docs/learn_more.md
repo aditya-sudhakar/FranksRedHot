@@ -1,4 +1,4 @@
-# About Frank's Redhot
+# About Frank's Red Hot
 
 ### Concept
 We wanted to learn more about circuit analysis by building a circuit analysis software, or SPICE
