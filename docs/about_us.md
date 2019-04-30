@@ -2,7 +2,8 @@
 
 ### Arwen Sadler
 
-Arwen is
+Arwen is an engineering student who is fond of birds and getting a full night's sleep. In their free time,
+they write overly complicated D&D storylines that the players then never discover.
 
 ### Aditya Sudhakar
 
