@@ -14,5 +14,5 @@ Lorem ipsul dolor some other latin stuff which means nothing
 - Alexander Wenstrup - [@awenstrup](https://www.github.com/awenstrup)
 - Mellie Zito - [@MellieZito](https://www.github.com/MellieZito)
 
-Click [here](about_us.md) to learn more!
+[About Us](about_us.md)
 
