@@ -15,6 +15,7 @@ Alex is
 
 ### Mellie Zito
 
-Mellie is
+Mellie is an engineering student studying electrical engineering. She likes poetry and funky art
+and dogs. She had a very fun time putting resistors all over the screen while working on the code.
 
 #### [Return to home page](index.md)
