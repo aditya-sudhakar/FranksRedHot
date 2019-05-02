@@ -25,12 +25,16 @@ class PyGameWindowView:
         self.screen.blit(self.grid_image, (0, 0))
         self.model.components.draw(self.screen)
 
+        #draw wires
+        for x1, y1, x2, y2 in self.model.wires:
+            pg.draw.line(self.screen, (0, 0, 255), (x1, y1), (x2, y2), 2)
+
         #HARD-CODED, FIX LATER: mouse_pressed should depend on whether the mouse
         #has been clicked over a component
 
         #blits component while its dragged
         comp_type = self.model.comp_type
-        if self.controller.mouse_pressed == False and not (comp_type == None):
+        if self.controller.mouse_pressed == False and not (comp_type is None):
             mouse_pos = self.controller.mouse_pos #get mouse position from controller
             comp = TempComp(comp_type,0,0)
             self.screen.blit(comp.image, (mouse_pos[0] - comp.rect.width/2,
