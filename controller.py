@@ -30,11 +30,13 @@ class Controller:
             x,y = event.pos
             print(x,y)
 
-            if not self.wire_place:
+
+            if self.analysis:
                 for component in self.model.components:
-                    if component.rect.collidepoint(x,y): #get type of component clicked
-                        print(component.type)
-                        self.model.comp_type = component.type #set type in model to that type
+                    if component.rect.collidepoint(x, y):
+                        print("The voltage drop over the selected resistor is")
+                        print(self.model.r_in_series(component))
+
             elif self.wire_place:
                 for component in self.model.components:
                     if component.rect.collidepoint(x, y):
@@ -45,11 +47,11 @@ class Controller:
                         else:
                             self.add_wire(self.component1, component, self.position1, (x, y))
 
-            elif self.analysis:
+            if not self.wire_place:
                 for component in self.model.components:
-                    if component.rect.collidepoint(x, y):
-                        print("The voltage drop over the selected resistor is")
-                        print(self.model.r_in_series(component))
+                    if component.rect.collidepoint(x,y): #get type of component clicked
+                        print(component.type)
+                        self.model.comp_type = component.type #set type in model to that type
 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:

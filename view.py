@@ -17,10 +17,21 @@ class PyGameWindowView:
         self.grid_image = pg.transform.scale(self.grid_image, (1440, 1080))
         self.wire_mode = pg.image.load("./images/wire_mode.png")
         self.wire_mode = pg.transform.scale(self.wire_mode, (275, 26))
+
+        self.analysis_mode = self.gen_text('You are in analysis mode')
+
+
         self.value_ask = pg.image.load("./images/resistor_value_ask.png")
 
         self.controller = None #will be updated in circuit.py
         self.model = None
+
+    def gen_text(self, text):
+        pg.font.init()
+        myfont = pg.font.SysFont('Comic Sans MS', 30)
+        out = myfont.render(text, False, (255, 255, 255))
+        return out
+
     def draw(self):
         """ Draws background and components on screen """
         self.screen.fill(pg.Color(255, 255, 255))
@@ -52,8 +63,12 @@ class PyGameWindowView:
             print(self.model)
 
         # If in wire mode, show that you're in wire mode
-        elif self.controller.wire_place == True:
+        # If in analysis mode, show that you're in analysis mode
+        elif self.controller.wire_place:
             self.screen.blit(self.wire_mode, (900, 20))
+        elif self.controller.analysis:
+            self.screen.blit(self.analysis_mode, (900, 20))
+            print("Analysis mode")
         # If being asked for a resistor value, say so
         elif self.model.r_value_ask == True:
             self.screen.blit(self.value_ask, (900, 20))
