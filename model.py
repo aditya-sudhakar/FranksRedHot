@@ -66,7 +66,8 @@ class CircuitModel:
         if comp == 'r':
             self.r_value_ask = True
             value = input('Please enter a resistor value (-1 to cancel): ')
-            if not int(value) == -1:
+            value = int(value)
+            if not value == -1:
                 self.r_value_ask = False
                 new_component = Resistor(value, xpos, ypos)
             else:

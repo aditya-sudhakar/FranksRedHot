@@ -68,7 +68,6 @@ class PyGameWindowView:
             self.screen.blit(self.wire_mode, (900, 20))
         elif self.controller.analysis:
             self.screen.blit(self.analysis_mode, (900, 20))
-            print("Analysis mode")
         # If being asked for a resistor value, say so
         elif self.model.r_value_ask == True:
             self.screen.blit(self.value_ask, (900, 20))

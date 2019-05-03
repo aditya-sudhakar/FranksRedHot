@@ -47,7 +47,7 @@ class Controller:
                         else:
                             self.add_wire(self.component1, component, self.position1, (x, y))
 
-            if not self.wire_place:
+            else:
                 for component in self.model.components:
                     if component.rect.collidepoint(x,y): #get type of component clicked
                         print(component.type)

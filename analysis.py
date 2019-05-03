@@ -55,19 +55,21 @@ class Analysis:
     def series_to_req(self, head):
         req = 0
         curr = head
-        prev = None
-        while curr.is_r_in_series():
-            req += curr.r
-            prev = curr
-            connected = self.model.connections[curr]
-            a = connected.get(0)
-            b = connected.get(1)
-            if is_r_in_series(a) and a is not prev:
-                curr = a
-            elif is_r_in_series(b) and b is not prev:
-                curr = b
-            else:
-                curr = None
+        visited = set()
+        queue = list()
+        queue.append(curr)
+        while not len(queue) == 0:
+            for resistor in queue:
+                if not self.is_r_in_series(resistor) or (resistor in visited):
+                    queue.remove(resistor)
+                else:
+                    req += resistor.r
+                    visited.add(resistor)
+                    queue.remove(resistor)
+                    for c in self.model.connections[resistor]:
+                        if not resistor in visited:
+                            queue.append(c)
+
 
         print('The equivalent resistance for this section is ', req)
         return req
@@ -75,12 +77,15 @@ class Analysis:
     def get_voltage_drop(self, component):
         for c in self.model.connections:
             if c.type == 'r':
-                if not is_r_in_series(c):
+                if not self.is_r_in_series(c):
                     return False
 
         vcc = self.model.vcc
-        first = self.model.connections[vcc].get(0)
-        req = series_to_req(first)
+        print(vcc)
+        connections_vcc = self.model.connections[vcc]
+        print(connections_vcc)
+        first = connections_vcc[0]
+        req = self.series_to_req(first)
 
         return component.r / req * vcc.v
 

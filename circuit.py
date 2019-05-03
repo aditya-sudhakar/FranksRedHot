@@ -37,6 +37,8 @@ def start_software(size):
     controller.model = model
     controller.view = view
 
+    analysis.model = model
+
     #runs software
     running = True
 
