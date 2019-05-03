@@ -16,8 +16,15 @@ Frank's Red Hot is a  circuit analysis software that allows users to analyze bas
 
 ## Using Frank's Red Hot
 
-Run `circuit.py` in the terminal to open the software. Close the popup window to halt the program.
-
+* Run `circuit.py` in the terminal to open the software. 
+* Click on a component to select it
+* Click on a grid box to place the component (one per box)
+* When placing resistors, tab into the terminal and type in the desired field value
+* Once your componenets are placed, hit the "w" key to enter "wire mode"
+* In wire mode, you can click on componenets to link them in your desired configuration
+* Once done, hit "a" to enter "analysis mode"
+* Click on a resistor to find out the voltage drop across it
+* Close the popup window/type "ctrl+c" in the terminal to halt the program.
 
 #### Version 0.6
 * Implemented dictionary object that allows us to run the backend analysis
