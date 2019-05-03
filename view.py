@@ -15,6 +15,9 @@ class PyGameWindowView:
         self.screen = pg.display.set_mode(size)
         self.grid_image = pg.image.load("./images/grid.png")
         self.grid_image = pg.transform.scale(self.grid_image, (1440, 1080))
+        self.wire_mode = pg.image.load("./images/wire_mode.png")
+        self.wire_mode = pg.transform.scale(self.wire_mode, (275, 26))
+        self.value_ask = pg.image.load("./images/resistor_value_ask.png")
 
         self.controller = None #will be updated in circuit.py
         self.model = None
@@ -28,9 +31,6 @@ class PyGameWindowView:
         #draw wires
         for x1, y1, x2, y2 in self.model.wires:
             pg.draw.line(self.screen, (0, 0, 255), (x1, y1), (x2, y2), 2)
-
-        #HARD-CODED, FIX LATER: mouse_pressed should depend on whether the mouse
-        #has been clicked over a component
 
         #blits component while its dragged
         comp_type = self.model.comp_type
@@ -50,5 +50,12 @@ class PyGameWindowView:
 
             print("\nCurrent components:") #for debugging
             print(self.model)
+
+        # If in wire mode, show that you're in wire mode
+        elif self.controller.wire_place == True:
+            self.screen.blit(self.wire_mode, (900, 20))
+        # If being asked for a resistor value, say so
+        elif self.model.r_value_ask == True:
+            self.screen.blit(self.value_ask, (900, 20))
 
         pg.display.flip()

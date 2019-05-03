@@ -9,10 +9,11 @@ from component import Component
 
 class Ground(Component): #inherit from component
     """ Encodes the state of resistors """
-    def __init__(self, x=0, y=0, angle=0, height=100, width=20):
+    def __init__(self, x=0, y=0, angle=0, height=180, width=180):
         """ Intializes Resistor with value r
         and position (x,y) at angle """
         super().__init__()
+        self.g = 0
         self.x = x
         self.y = y
         self.angle = angle

@@ -9,6 +9,7 @@ import pygame
 from model import CircuitModel
 from view import PyGameWindowView
 from controller import Controller
+from analysis import Analysis
 
 
 def start_software(size):
@@ -23,10 +24,12 @@ def start_software(size):
     model = CircuitModel()
     view = PyGameWindowView(size)
     controller = Controller()
+    analysis = Analysis()
 
     #gives model, view, controller references to the other ones
     model.view = view
     model.controller = controller
+    model.analysis = analysis
 
     view.model = model
     view.controller = controller

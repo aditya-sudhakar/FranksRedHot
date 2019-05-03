@@ -27,12 +27,19 @@ class CircuitModel:
 
         self.wires = list()
 
+        self.vcc = None
+
         # TO DO: Make so that it picks which image to load based on which
         # component was clicked
         self.comp_type = None #component that is clicked
 
         self.view = None
         self.controller = None
+        self.analysis = None
+
+        # Variable to determine if the user is being asked to add a resistor
+        # value:
+        self.r_value_ask = False
 
         #self.width = size[0]
         #self.height = size[1]
@@ -57,15 +64,19 @@ class CircuitModel:
         xpos, ypos = self.grid_snap(x, y)
         new_component = None
         if comp == 'r':
+            self.r_value_ask = True
             value = input('Please enter a resistor value (-1 to cancel): ')
             if not int(value) == -1:
+                self.r_value_ask = False
                 new_component = Resistor(value, xpos, ypos)
             else:
+                self.r_value_ask = False
                 print('canceling')
              #if type 'r', make a resistor
         elif comp == 'v':
             value = 5
             new_component = Voltage(value, xpos, ypos)
+            self.vcc = new_component
         elif comp == 'g':
             value = 0
             new_component = Ground(xpos, ypos)
@@ -87,6 +98,9 @@ class CircuitModel:
             print(key, " is connected to:")
             for conn in self.connections[key]:
                 print(conn)
+
+    def r_in_series(self, component):
+        return self.analysis.get_voltage_drop(component)
 
     def __str__(self):
         """ Prints components to help in debugging """

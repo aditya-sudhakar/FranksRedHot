@@ -17,6 +17,8 @@ class Controller:
         self.view = None
 
         self.wire_place = False
+        self.analysis = False
+
         self.component1 = None
         self.position1 = 0
 
@@ -33,7 +35,7 @@ class Controller:
                     if component.rect.collidepoint(x,y): #get type of component clicked
                         print(component.type)
                         self.model.comp_type = component.type #set type in model to that type
-            else:
+            elif self.wire_place:
                 for component in self.model.components:
                     if component.rect.collidepoint(x, y):
                         print(component.type)
@@ -43,9 +45,22 @@ class Controller:
                         else:
                             self.add_wire(self.component1, component, self.position1, (x, y))
 
+            elif self.analysis:
+                for component in self.model.components:
+                    if component.rect.collidepoint(x, y):
+                        print("The voltage drop over the selected resistor is")
+                        print(self.model.r_in_series(component))
+
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:
                 self.wire_place ^= True
+            elif event.key == pygame.K_a:
+                self.analysis ^= True
+
+            if self.wire_place:
+                self.analysis = False
+            if self.analysis:
+                self.wire_place = False
 
     def add_wire(self, c1, c2, p1, p2):
         self.model.connections[c1].append(c2)

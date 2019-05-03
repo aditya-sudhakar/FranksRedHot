@@ -9,7 +9,7 @@ from component import Component
 
 class TempComp(Component): #inherit from component
     """ Encodes the state of resistors """
-    def __init__(self, type, x=0, y=0, angle=0, height=100, width=20):
+    def __init__(self, type, x=0, y=0, angle=0):
         """ Intializes TempComp with a type
         and position (x,y) at angle """
         super().__init__()
@@ -20,11 +20,13 @@ class TempComp(Component): #inherit from component
 
         if self.type == 'r':
             self.image = pg.image.load('images/resistor.png')
+            self.image = pg.transform.scale(self.image, (100,20))
         elif self.type == 'v':
             self.image = pg.image.load('images/voltage.png')
+            self.image = pg.transform.scale(self.image, (80,80))
         elif self.type == 'g':
             self.image = pg.image.load('images/ground.png')
-        self.image = pg.transform.scale(self.image, (height,width))
+            self.image = pg.transform.scale(self.image, (180,180))
 
         self.rect = self.image.get_rect(center=(x,y))
     def __str__(self):

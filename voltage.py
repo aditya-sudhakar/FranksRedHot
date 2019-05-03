@@ -9,7 +9,7 @@ from component import Component
 
 class Voltage(Component): #inherit from component
     """ Encodes the state of resistors """
-    def __init__(self, v=5, x=0, y=0, angle=0, height=200, width=20):
+    def __init__(self, v=5, x=0, y=0, angle=0, height=80, width=80):
         """ Intializes Resistor with value r
         and position (x,y) at angle """
         super().__init__()
