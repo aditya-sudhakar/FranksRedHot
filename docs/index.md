@@ -6,8 +6,6 @@
 ### About Frank's Red Hot
 Frank's Red Hot is a circuit analysis (or SPICE) software, named after Olin's beloved mascot, Frank.
 
-![Frank](frank.png)
-
 [Click here](learn_more.md) to learn more about our project!
 
 
