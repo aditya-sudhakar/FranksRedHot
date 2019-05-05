@@ -18,6 +18,3 @@ class Component(pg.sprite.Sprite):
         image = image.convert()
 
         return image, image.get_rect()
-
-    def add(self, model):
-        pass

@@ -29,14 +29,13 @@ class Controller:
             self.mouse_pressed = True
             x,y = event.pos
 
-
-            if self.analysis:
+            if self.analysis: #analysis mode
                 for component in self.model.components:
                     if component.rect.collidepoint(x, y):
                         print("The voltage drop over the selected resistor is")
                         print(self.model.r_in_series(component))
 
-            elif self.wire_place:
+            elif self.wire_place: #wire placing mode
                 for component in self.model.components:
                     if component.rect.collidepoint(x, y):
                         print(component.type)
@@ -46,24 +45,31 @@ class Controller:
                         else:
                             self.add_wire(self.component1, component, self.position1, (x, y))
 
-            else:
+            else: #placing and dragging of components
+                if self.model.comp_type == None: #when simulation starts
+                    self.model.first_click = True #to track placing vs. dragging
+                else:
+                    self.model.first_click = False
+
                 for component in self.model.components:
                     if component.rect.collidepoint(x,y): #get type of component clicked
-                        print(component.type)
+                        if not (self.model.comp_type == component.type): #switching components
+                            self.model.first_click = True
                         self.model.comp_type = component.type #set type in model to that type
 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:
-                self.wire_place ^= True
+                self.wire_place ^= True #w -> write placing mode
             elif event.key == pygame.K_a:
-                self.analysis ^= True
+                self.analysis ^= True #a -> write placing mode
 
-            if self.wire_place:
+            if self.wire_place: #wire placing and analysis cannot overlap
                 self.analysis = False
             if self.analysis:
                 self.wire_place = False
 
     def add_wire(self, c1, c2, p1, p2):
+        """ Draws a wire between two components"""
         self.model.connections[c1].append(c2)
         self.model.connections[c2].append(c1)
         self.model.wires.append((p1[0], p1[1], p2[0], p2[1]))
@@ -72,6 +78,7 @@ class Controller:
         self.model.print_connections()
 
     def update(self):
+        """ Updates position of the mouse """
         self.mouse_pos = pygame.mouse.get_pos()
         if self.wire_place:
             self.model.comp_type = None

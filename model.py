@@ -22,24 +22,19 @@ class CircuitModel:
         self.g = Ground(200, 550)
         self.components.add(self.g)
 
+        #stores components and their connections
         self.graph = dict()
         self.connections = dict()
 
         self.wires = list()
 
         self.vcc = None
-
-        # TO DO: Make so that it picks which image to load based on which
-        # component was clicked
+        self.first_click = True
         self.comp_type = None #component that is clicked
 
         self.view = None
         self.controller = None
         self.analysis = None
-
-        #self.width = size[0]
-        #self.height = size[1]
-        #have dictionary of components
 
     def grid_snap(self, x, y):
         """ Makes components snap to grid positions when placed """
@@ -85,15 +80,16 @@ class CircuitModel:
 
     def update(self):
         """ Update the software state """
-        #update components, position of components
 
     def print_connections(self):
+        """ Prints connections between components """
         for key in self.connections:
             print(key, " is connected to:")
             for conn in self.connections[key]:
                 print(conn)
 
     def r_in_series(self, component):
+        """ Gets voltage drop for a component in series"""
         return self.analysis.get_voltage_drop(component)
 
     def __str__(self):

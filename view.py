@@ -42,27 +42,23 @@ class PyGameWindowView:
 
         #blits component while its dragged
         comp_type = self.model.comp_type
-        if self.controller.mouse_pressed == False and not (comp_type is None):
+        if not (comp_type is None) and self.model.first_click:
             mouse_pos = self.controller.mouse_pos #get mouse position from controller
             comp = TempComp(comp_type,0,0)
             self.screen.blit(comp.image, (mouse_pos[0] - comp.rect.width/2,
                                           mouse_pos[1] - comp.rect.height/2))
         #when mouse click, blits component in place
-        elif self.controller.mouse_pressed == True and not (comp_type == None):
+        elif self.controller.mouse_pressed == True and not self.model.first_click:
             mouse_pos = self.controller.mouse_pos
             print(comp_type)
             self.model.add_comp(comp_type, mouse_pos[0], mouse_pos[1]) #adds resistor
             self.controller.mouse_pressed = False #mouse is not pressed again
+            self.model.first_click = True
 
-            print("\nCurrent components:") #for debugging
-            print(self.model)
-
-        # If in wire mode, show that you're in wire mode
-        # If in analysis mode, show that you're in analysis mode
-        elif self.controller.wire_place:
-            self.screen.blit(self.wire_mode, (900, 20))
-        elif self.controller.analysis:
-            self.screen.blit(self.analysis_mode, (900, 20))
+        elif self.controller.wire_place: #if in wire mode
+            self.screen.blit(self.wire_mode, (900, 20)) #show that
+        elif self.controller.analysis: #if in analysis mode
+            self.screen.blit(self.analysis_mode, (900, 20)) #show that
         # TO DO: If being asked for a resistor value, say so
 
 
