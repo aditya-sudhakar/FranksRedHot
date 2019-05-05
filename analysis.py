@@ -60,10 +60,11 @@ class Analysis:
         queue.append(curr)
         while not len(queue) == 0:
             for resistor in queue:
-                if not self.is_r_in_series(resistor) or (resistor in visited):
+                if (not self.is_r_in_series(resistor)) or (resistor in visited):
                     queue.remove(resistor)
                 else:
                     req += resistor.r
+                    print(resistor)
                     visited.add(resistor)
                     queue.remove(resistor)
                     for c in self.model.connections[resistor]:
