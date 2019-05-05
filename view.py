@@ -17,7 +17,7 @@ class PyGameWindowView:
         self.grid_image = pg.transform.scale(self.grid_image, (1440, 1040)) #1080
 
         self.analysis_mode = self.gen_text('You are in analysis mode')
-        self.resistor_ask = self.gen_text('Please enter a resistor value in the terminal')
+        self.resistor_ask = self.gen_text('Remember to enter a resistor value in the terminal')
         self.wire_mode = self.gen_text('Currently in wire mode')
 
         self.controller = None #will be updated in circuit.py
@@ -42,6 +42,10 @@ class PyGameWindowView:
 
         #blits component while its dragged
         comp_type = self.model.comp_type
+
+        if comp_type == 'r':
+            self.screen.blit(self.resistor_ask, (900, 20)) #show that
+
         if not (comp_type is None) and self.model.first_click:
             mouse_pos = self.controller.mouse_pos #get mouse position from controller
             comp = TempComp(comp_type,0,0)
