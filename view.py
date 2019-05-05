@@ -14,7 +14,7 @@ class PyGameWindowView:
     def __init__(self, size):
         self.screen = pg.display.set_mode(size)
         self.grid_image = pg.image.load("./images/grid.png")
-        self.grid_image = pg.transform.scale(self.grid_image, (1440, 1080))
+        self.grid_image = pg.transform.scale(self.grid_image, (1440, 1040)) #1080
 
         self.analysis_mode = self.gen_text('You are in analysis mode')
         self.resistor_ask = self.gen_text('Please enter a resistor value in the terminal')

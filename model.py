@@ -15,11 +15,11 @@ class CircuitModel:
         self.components = pg.sprite.Group()
 
         # Adds the sideboard components to click on
-        self.r = Resistor(100, 80, 175)
+        self.r = Resistor(100, 80, 165)
         self.components.add(self.r)
-        self.v = Voltage(5, 200, 450)
+        self.v = Voltage(5, 80, 260, 0, 60, 60) #200 450
         self.components.add(self.v)
-        self.g = Ground(200, 550)
+        self.g = Ground(80, 360, 0, 140, 140) #200 550
         self.components.add(self.g)
 
         #stores components and their connections
@@ -39,9 +39,9 @@ class CircuitModel:
     def grid_snap(self, x, y):
         """ Makes components snap to grid positions when placed """
         grid_positions_x = [150, 300, 440, 585, 730, 870, 1010, 1150]
-        grid_positions_y = [120, 230, 330, 440, 550, 650, 760, 870]
-        new_x = 50
-        new_y = 50
+        grid_positions_y = [115, 220, 320, 425, 535, 635, 740, 845]
+        new_x = 800
+        new_y = 800
         for x_pos in grid_positions_x:
             if x_pos <= x:
                 new_x = x_pos + 65
