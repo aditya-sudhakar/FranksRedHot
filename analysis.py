@@ -75,6 +75,14 @@ class Analysis:
         print('The equivalent resistance for this section is ', req)
         return req
 
+    def temp_series_to_req(self):
+        req = 0
+        for c in self.model.connections:
+            if c.type == 'r':
+                req += c.r
+        return req
+
+
     def get_voltage_drop(self, component):
         for c in self.model.connections:
             if c.type == 'r':
@@ -82,11 +90,10 @@ class Analysis:
                     return False
 
         vcc = self.model.vcc
-        print(vcc)
         connections_vcc = self.model.connections[vcc]
-        print(connections_vcc)
         first = connections_vcc[0]
-        req = self.series_to_req(first)
+        req = self.temp_series_to_req()
+        #print('Req = ', req)
 
         return component.r / req * vcc.v
 
