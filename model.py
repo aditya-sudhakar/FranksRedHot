@@ -15,7 +15,7 @@ class CircuitModel:
         self.components = pg.sprite.Group()
 
         # Adds the sideboard components to click on
-        self.r = Resistor(100, 200, 150)
+        self.r = Resistor(100, 80, 175)
         self.components.add(self.r)
         self.v = Voltage(5, 200, 450)
         self.components.add(self.v)
@@ -36,10 +36,6 @@ class CircuitModel:
         self.view = None
         self.controller = None
         self.analysis = None
-
-        # Variable to determine if the user is being asked to add a resistor
-        # value:
-        self.r_value_ask = False
 
         #self.width = size[0]
         #self.height = size[1]
@@ -64,16 +60,13 @@ class CircuitModel:
         xpos, ypos = self.grid_snap(x, y)
         new_component = None
         if comp == 'r':
-            self.r_value_ask = True
             value = input('Please enter a resistor value (-1 to cancel): ')
             value = int(value)
             if not value == -1:
-                self.r_value_ask = False
                 new_component = Resistor(value, xpos, ypos)
             else:
-                self.r_value_ask = False
                 print('canceling')
-             #if type 'r', make a resistor
+
         elif comp == 'v':
             value = 5
             new_component = Voltage(value, xpos, ypos)

@@ -28,7 +28,6 @@ class Controller:
         if pygame.mouse.get_pressed()[0] and event.type == pygame.MOUSEBUTTONDOWN:
             self.mouse_pressed = True
             x,y = event.pos
-            print(x,y)
 
 
             if self.analysis:

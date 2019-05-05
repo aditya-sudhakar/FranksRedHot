@@ -15,13 +15,10 @@ class PyGameWindowView:
         self.screen = pg.display.set_mode(size)
         self.grid_image = pg.image.load("./images/grid.png")
         self.grid_image = pg.transform.scale(self.grid_image, (1440, 1080))
-        self.wire_mode = pg.image.load("./images/wire_mode.png")
-        self.wire_mode = pg.transform.scale(self.wire_mode, (275, 26))
 
         self.analysis_mode = self.gen_text('You are in analysis mode')
-
-
-        self.value_ask = pg.image.load("./images/resistor_value_ask.png")
+        self.resistor_ask = self.gen_text('Please enter a resistor value in the terminal')
+        self.wire_mode = self.gen_text('Currently in wire mode')
 
         self.controller = None #will be updated in circuit.py
         self.model = None
@@ -53,8 +50,6 @@ class PyGameWindowView:
         #when mouse click, blits component in place
         elif self.controller.mouse_pressed == True and not (comp_type == None):
             mouse_pos = self.controller.mouse_pos
-            #HARD-CODED, FIX LATER: resistor is drawn when clicked, should be
-            #any component/get it from model
             print(comp_type)
             self.model.add_comp(comp_type, mouse_pos[0], mouse_pos[1]) #adds resistor
             self.controller.mouse_pressed = False #mouse is not pressed again
@@ -68,8 +63,7 @@ class PyGameWindowView:
             self.screen.blit(self.wire_mode, (900, 20))
         elif self.controller.analysis:
             self.screen.blit(self.analysis_mode, (900, 20))
-        # If being asked for a resistor value, say so
-        elif self.model.r_value_ask == True:
-            self.screen.blit(self.value_ask, (900, 20))
+        # TO DO: If being asked for a resistor value, say so
+
 
         pg.display.flip()
