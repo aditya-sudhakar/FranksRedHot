@@ -18,7 +18,7 @@ After creating resistors/voltage sources/ground that could be placed one per box
 
 Our biggest challenge with implementing the backend was time. We spent a lot of time trying to clean up the UI and with projects from other classes and other assignments in SoftDes, we decided to focus on making a working MVP - software that can understand the structure of a circuit and calculate voltage drops across resistors. Our final project looks like this:
 
-Watch the project video [here](videolink):
+Watch the project video [here](https://youtu.be/kwTweYTBiVw):
 
 
 #### [Return to home page](index.md)
