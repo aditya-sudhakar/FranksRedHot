@@ -11,9 +11,8 @@ Ad is
 
 ### Alexander Wenstrup
 
-Alex is a student who just learned that he will be majoring in engineering. He is okay with this. He also 
-requires 8-10 hours of sleep per day, which may conflict with his plans of majoring in engineering. Alex
-also likes to play ultimate frisbee.
+Alex is a another engineering student at Olin college. He also requires 8-10 hours of sleep per day, 
+which may conflict with his plans of majoring in engineering. Alexalso likes to play ultimate frisbee.
 
 ### Mellie Zito
 
