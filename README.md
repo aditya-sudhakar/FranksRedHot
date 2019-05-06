@@ -13,6 +13,9 @@
 
 Frank's Red Hot is a  circuit analysis software that allows users to analyze basic circuits containing components like resistors, capacitors, and op amps. 
 
+## Website
+
+View the website here: [Frank's Red Hot](https://aditya-sudhakar.github.io/FranksRedHot/)
 
 ## Using Frank's Red Hot
 
