@@ -19,6 +19,7 @@ View the website here: [Frank's Red Hot](https://aditya-sudhakar.github.io/Frank
 
 ## Using Frank's Red Hot
 
+* Install the pygame library with `pip3 install pygame` in your terminal
 * Run `circuit.py` in the terminal to open the software. 
 * Click on a component to select it
 * Click on a grid box to place the component (one per box)
