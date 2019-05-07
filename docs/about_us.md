@@ -7,7 +7,7 @@ they write overly complicated D&D storylines that the players then never discove
 
 ### Aditya Sudhakar
 
-Ad is
+Adi is also an engineering student. In hes free time, he can be found at the gym sadly whispering to himself, "All I do for these dumbells is lift them up, but all they do is weigh me down."
 
 ### Alexander Wenstrup
 
