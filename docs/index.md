@@ -1,6 +1,7 @@
 # Frank's Red Hot SPICE Software
 
 ### Demonstration Video
+![Final Image](finalimg.png)
 [Click here](https://youtu.be/kwTweYTBiVw) to watch our demonstration video!
 
 ### About Frank's Red Hot
