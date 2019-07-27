@@ -14,7 +14,7 @@ Frank's Red Hot is a circuit analysis (or SPICE) software, named after Olin's be
 - Arwen Sadler - [@arwensadler](https://www.github.com/arwensadler)
 - Aditya Sudhakar - [@aditya-sudhakar](https://www.github.com/aditya-sudhakar)
 - Alexander Wenstrup - [@awenstrup](https://www.github.com/awenstrup)
-- Mellie Zito - [@MellieZito](https://www.github.com/MellieZito)
+- Case Zito - [@CaseZito](https://www.github.com/CaseZito)
 
 [About Us](about_us.md)
 
