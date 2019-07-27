@@ -2,7 +2,7 @@
 
 ### Demonstration Video
 ![Final Image](finalimg.png)
-[Click here](https://youtu.be/kwTweYTBiVw) to watch our demonstration video!
+[Click here](https://youtu.be/llGQMEhNpgo) to watch our demonstration video!
 
 ### About Frank's Red Hot
 Frank's Red Hot is a circuit analysis (or SPICE) software, named after Olin's beloved mascot, Frank.
