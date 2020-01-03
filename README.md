@@ -6,7 +6,7 @@
 * Aditya Sudhakar  @aditya-sudhakar
 * Arwen Sadler     @arwensadler
 * Alex Wenstrup    @awenstrup
-* Case Zito      @CaseZito
+* Riley Zito      @RileyZito
 
 
 ## Description
