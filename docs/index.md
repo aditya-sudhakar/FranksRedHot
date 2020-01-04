@@ -2,7 +2,7 @@
 
 ### Demonstration Video
 ![Final Image](finalimg.png)
-[Click here](https://youtu.be/llGQMEhNpgo) to watch our demonstration video!
+[Click here](https://youtu.be/AIheR9vQLE4) to watch our demonstration video!
 
 ### About Frank's Red Hot
 Frank's Red Hot is a circuit analysis (or SPICE) software, named after Olin's beloved mascot, Frank.
@@ -14,7 +14,7 @@ Frank's Red Hot is a circuit analysis (or SPICE) software, named after Olin's be
 - Arwen Sadler - [@arwensadler](https://www.github.com/arwensadler)
 - Aditya Sudhakar - [@aditya-sudhakar](https://www.github.com/aditya-sudhakar)
 - Alexander Wenstrup - [@awenstrup](https://www.github.com/awenstrup)
-- Case Zito - [@CaseZito](https://www.github.com/CaseZito)
+- Riley Zito - [@RileyZito](https://www.github.com/RileyZito)
 
 [About Us](about_us.md)
 
