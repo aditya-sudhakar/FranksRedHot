@@ -14,9 +14,9 @@ Adi is also an engineering student. In hes free time, he can be found at the gym
 Alex is a another engineering student at Olin College. He requires 8-10 hours of sleep per day, 
 which may conflict with his plans of majoring in engineering. Alex also likes to play ultimate frisbee.
 
-### Case Zito
+### Riley Zito
 
-Case is an engineering student studying electrical engineering. She like poetry and funky art
-and dogs. She had a very fun time putting resistors all over the screen while working on the code.
+Riley is an engineering student studying electrical engineering. They like poetry and funky art
+and dogs. They had a very fun time putting resistors all over the screen while working on the code.
 
 #### [Return to home page](index.md)
